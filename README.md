@@ -32,3 +32,11 @@ Other useful commands:
 ```
   python3 -m pip install #This builds for the native pyenv python rather than Pyodide, useful for testing
 ```
+
+# Requirements
+Python 3.12, venv
+
+# References
+https://pyodide.org/en/stable/usage/loading-custom-python-code.html  
+https://pyodide.org/en/stable/development/building-and-testing-packages.html  
+https://stackoverflow.com/questions/66157987/how-to-build-a-c-extension-in-keeping-with-pep-517-i-e-with-pyproject-toml-ins
