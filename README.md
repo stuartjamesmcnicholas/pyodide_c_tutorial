@@ -1,4 +1,4 @@
-#Build C extension into Pyodide
+# Build C extension into Pyodide
 
 This is mainly a set of notes for myself when learning how to build a C extension
 for Pyodide. In due course I would probably like to investigate if I can incorporate
