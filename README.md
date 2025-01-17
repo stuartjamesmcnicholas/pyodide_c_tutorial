@@ -21,6 +21,7 @@ nanobind into this.
   python3 -m pip install . #This builds for the native pyenv python, for testing
   python
   pyodide build #This builds the emscripten wheel!
-  cp dist/mypackage-0.0.1-cp312-cp312-pyodide_2024_0_wasm32.whl serve_example
+  cp dist/mypackage-0.0.1-cp312-cp312-pyodide_2024_0_wasm32.whl ../serve_example
+  cd ..
   python -m http.server --directory serve_example
 ```
