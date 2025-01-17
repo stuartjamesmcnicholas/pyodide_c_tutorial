@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="https://cdn.jsdelivr.net/pyodide/v0.27.1/full/pyodide.js"></script>
+  </head>
+  <body>
+    Pyodide test page <br>
+    Open your browser console to see Pyodide output
+    <script type="text/javascript">
+      async function main(){
+        const pyodide = await loadPyodide();
+
+        let response = await fetch("/mypackage-0.0.1-cp312-cp312-pyodide_2024_0_wasm32.whl")
+        let buffer = await response.arrayBuffer()
+        await pyodide.unpackArchive(buffer, "wheel")
+        
+        /*
+        // Or this. I prefer above.
+        await pyodide.runPythonAsync(`
+            from pyodide.http import pyfetch
+            response = await pyfetch("/mypackage-0.0.1-cp312-cp312-pyodide_2024_0_wasm32.whl")
+            await response.unpack_archive()
+        `)
+        */
+        const pkg = pyodide.pyimport("mypackage.mymodule");
+
+        pkg.printf("hello,"+" this is a "+"test of what we can do!!!")
+      }
+      main();
+    </script>
+  </body>
+</html>

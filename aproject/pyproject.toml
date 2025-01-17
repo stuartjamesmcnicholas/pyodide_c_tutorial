@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=74.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mypackage"
+version = "0.0.1"
+authors = [
+  {name = "Stuart McNicholas", email = "stuart.mcnicholas@googlemail.com"}
+]
+maintainers = [
+  {name = "Stuart McNicholas", email = "stuart.mcnicholas@googlemail.com"}
+]
+
+[tool.setuptools]
+ext-modules = [{name="mypackage.mymodule",sources =["src/wrap.c"],py-limited-api=true}]
