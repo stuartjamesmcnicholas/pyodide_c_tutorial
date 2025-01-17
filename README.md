@@ -5,10 +5,12 @@ for Pyodide. In due course I would probably like to investigate if I can incorpo
 nanobind into this.
 
 ```
+  #A Python virtual environment just for pyodide installation. If you have another way of running pip then do that.
   python3.12 -m venv pyodide_env/
   source pyodide_env/bin/activate
   python3 -m pip install pyodide-build
   pyodide config get emscripten_version
+  #An emscripten installation of specific version required by pyodide, this is different from my useal emscripten.
   git clone https://github.com/emscripten-core/emsdk.git
   cd emsdk/
   ./emsdk install 3.1.58
@@ -16,6 +18,7 @@ nanobind into this.
   source emsdk_env.sh
   emcc -v #Check we have 3.1.58
   cd ..
+  #Then build this extension
   git clone https://github.com/stuartjamesmcnicholas/pyodide_c_tutorial.git
   cd pyodide_c_tutorial/aproject
   pyodide build #This builds the emscripten wheel!
